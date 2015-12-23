@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :except => [ :index, :show ]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -58,6 +59,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  private
+    # Authenticate
+    def authenticate
+      authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
     end
   end
 
