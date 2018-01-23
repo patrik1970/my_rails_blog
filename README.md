@@ -9,6 +9,6 @@ sqlite3
 
 ## installing
 Clone the repository.<br>
-gem install.<br>
-rails server.<br>
+gem install<br>
+rails server<br>
 Open browser at http://localhost:3000 
