@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Gemfile.lock to prevent security vulnarebility i gitHub
+Gemfile.lock
